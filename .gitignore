@@ -1,0 +1,27 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Node (only used for tests)
+node_modules/
+npm-debug.log*
+
+# Python (only used by the tools/ scripts)
+__pycache__/
+*.pyc
+.venv/
+
+# Local copies of settings that may contain a private API key.
+# Keep the real config.js with the placeholder in the repository.
+config.local.js
+*.local.js
+
+# Archives
+*.zip
+*.rar

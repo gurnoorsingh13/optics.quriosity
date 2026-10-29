@@ -1,0 +1,136 @@
+/* ============================================================================
+   styles/theme.css  —  Colours, fonts and sizes
+   ----------------------------------------------------------------------------
+   WHAT THIS FILE DOES
+     Every colour and font in the app is defined here once, as a named value
+     ("design token"), e.g.  --text: #2f2e2b;
+     The other style files only use these names, so changing a value here
+     changes it everywhere.
+
+   SAFE TO EDIT
+     Yes. Change a colour code (like #2f2e2b) and refresh the page.
+     The first block is the LIGHT theme, the second and third the DARK theme
+     (keep the two dark blocks identical).
+
+   PHYSICS COLOURS (from the notes, keep them recognisable)
+     --beam    orange  = photon amplitude travelling on an edge
+     --bs      blue    = beam splitter,  --tip red = its input side
+     --mirror  silver  = mirror (θ = 180°)
+     --phase   green   = phase shifter (θ = 0°, φ ≠ 0°)
+     --det     indigo  = detector
+   ============================================================================ */
+
+:root {
+  /* Fonts. If they cannot load (no internet), the system font is used. */
+  --font: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --mono: "JetBrains Mono", "Cascadia Mono", ui-monospace, Consolas, monospace;
+
+  /* Corners and shadows */
+  --r-sm: 4px;
+  --r: 6px;
+  --r-lg: 10px;
+
+  /* ---------------- LIGHT THEME (Notion-like) ---------------- */
+  --bg: #ffffff;                       /* main background */
+  --bg-sidebar: #f8f8f7;               /* left sidebar */
+  --bg-subtle: #fafaf9;                /* soft panels, callouts */
+  --bg-elevated: #ffffff;              /* menus, popovers, inputs */
+  --hover: rgba(55, 53, 47, .06);      /* hover background */
+  --pressed: rgba(55, 53, 47, .10);    /* selected / pressed background */
+  --border: rgba(55, 53, 47, .09);     /* hairlines */
+  --border-strong: rgba(55, 53, 47, .17);
+  --text: #2f2e2b;                     /* main text */
+  --text-2: #6f6e69;                   /* secondary text */
+  --text-3: #a19f9a;                   /* hints, placeholders */
+  --primary: #191918;                  /* primary button */
+  --primary-text: #ffffff;
+  --primary-hover: #33332f;
+  --accent: #2383e2;                   /* selection and focus */
+  --accent-soft: rgba(35, 131, 226, .12);
+  --focus: rgba(35, 131, 226, .32);
+  --toast-bg: #191918;
+  --toast-text: #ffffff;
+
+  --canvas: #ffffff;                   /* optical table background */
+  --dot: #e6e5e2;                      /* dot grid */
+  --gridline: #d3d1cc;                 /* dashed edges */
+  --node: #ffffff;
+  --art-halo: none;                    /* outline around component drawings (dark theme only) */
+
+  --beam: #f07800;
+  --bs: #2d9cf0;
+  --bs-edge: #1572c4;
+  --tip: #e5484d;
+  --mirror: #aab3bc;
+  --mirror-edge: #6a7480;
+  --phase: #10a14f;
+  --det: #4a55d6;
+
+  --ok: #10a14f;
+  --warn: #c27400;
+  --bad: #e03e3e;
+
+  /* Notion-style tag colours: soft background + readable text */
+  --tag-gray-bg: rgba(55, 53, 47, .08);   --tag-gray: #5f5e5a;
+  --tag-blue-bg: rgba(35, 131, 226, .12); --tag-blue: #1d6fbe;
+  --tag-green-bg: rgba(16, 161, 79, .12); --tag-green: #0d7f40;
+  --tag-orange-bg: rgba(240, 120, 0, .13);--tag-orange: #a65300;
+  --tag-red-bg: rgba(224, 62, 62, .12);   --tag-red: #b42f2f;
+  --tag-purple-bg: rgba(74, 85, 214, .12);--tag-purple: #3e47b8;
+
+  --shadow-sm: 0 1px 2px rgba(15, 15, 15, .06);
+  --shadow-pop: 0 0 0 1px rgba(15, 15, 15, .05), 0 4px 10px rgba(15, 15, 15, .07), 0 18px 44px rgba(15, 15, 15, .12);
+  --backdrop: rgba(15, 15, 15, .32);
+
+  color-scheme: light;
+}
+
+/* ---------------- DARK THEME (Resend-like) ----------------
+   Used when the computer is in dark mode (and the app theme is "System"),
+   or when the app theme is set to "Dark". Keep both blocks the same. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #000000; --bg-sidebar: #070707; --bg-subtle: #0d0d0d; --bg-elevated: #111111;
+    --hover: rgba(255, 255, 255, .06); --pressed: rgba(255, 255, 255, .10);
+    --border: rgba(255, 255, 255, .08); --border-strong: rgba(255, 255, 255, .15);
+    --text: #ededed; --text-2: #a1a1a1; --text-3: #6b6b6b;
+    --primary: #ededed; --primary-text: #0a0a0a; --primary-hover: #ffffff;
+    --accent: #3b9eff; --accent-soft: rgba(59, 158, 255, .16); --focus: rgba(59, 158, 255, .38);
+    --toast-bg: #ededed; --toast-text: #0a0a0a;
+    --canvas: #000000; --dot: rgba(255, 255, 255, .085); --gridline: rgba(255, 255, 255, .16); --node: #0a0a0a; --art-halo: drop-shadow(0 0 .6px rgba(255,255,255,.85)) drop-shadow(0 0 1.4px rgba(255,255,255,.25));
+    --beam: #ff9417; --bs: #4fb0ff; --bs-edge: #a9d9ff; --tip: #ff5c60; --mirror: #c8cfd6; --mirror-edge: #f3f5f7; --phase: #3ddc84; --det: #8f9bff;
+    --ok: #3ddc84; --warn: #f5a623; --bad: #ff5c5c;
+    --tag-gray-bg: rgba(255, 255, 255, .08); --tag-gray: #b5b5b5;
+    --tag-blue-bg: rgba(59, 158, 255, .16); --tag-blue: #8cc6ff;
+    --tag-green-bg: rgba(61, 220, 132, .14); --tag-green: #7fe8ad;
+    --tag-orange-bg: rgba(255, 148, 23, .16); --tag-orange: #ffbd6e;
+    --tag-red-bg: rgba(255, 92, 92, .15); --tag-red: #ff9b9b;
+    --tag-purple-bg: rgba(143, 155, 255, .16); --tag-purple: #bcc3ff;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5);
+    --shadow-pop: 0 0 0 1px rgba(255, 255, 255, .09), 0 18px 48px rgba(0, 0, 0, .7);
+    --backdrop: rgba(0, 0, 0, .6);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #000000; --bg-sidebar: #070707; --bg-subtle: #0d0d0d; --bg-elevated: #111111;
+  --hover: rgba(255, 255, 255, .06); --pressed: rgba(255, 255, 255, .10);
+  --border: rgba(255, 255, 255, .08); --border-strong: rgba(255, 255, 255, .15);
+  --text: #ededed; --text-2: #a1a1a1; --text-3: #6b6b6b;
+  --primary: #ededed; --primary-text: #0a0a0a; --primary-hover: #ffffff;
+  --accent: #3b9eff; --accent-soft: rgba(59, 158, 255, .16); --focus: rgba(59, 158, 255, .38);
+  --toast-bg: #ededed; --toast-text: #0a0a0a;
+  --canvas: #000000; --dot: rgba(255, 255, 255, .085); --gridline: rgba(255, 255, 255, .16); --node: #0a0a0a; --art-halo: drop-shadow(0 0 .6px rgba(255,255,255,.85)) drop-shadow(0 0 1.4px rgba(255,255,255,.25));
+  --beam: #ff9417; --bs: #4fb0ff; --bs-edge: #a9d9ff; --tip: #ff5c60; --mirror: #c8cfd6; --mirror-edge: #f3f5f7; --phase: #3ddc84; --det: #8f9bff;
+  --ok: #3ddc84; --warn: #f5a623; --bad: #ff5c5c;
+  --tag-gray-bg: rgba(255, 255, 255, .08); --tag-gray: #b5b5b5;
+  --tag-blue-bg: rgba(59, 158, 255, .16); --tag-blue: #8cc6ff;
+  --tag-green-bg: rgba(61, 220, 132, .14); --tag-green: #7fe8ad;
+  --tag-orange-bg: rgba(255, 148, 23, .16); --tag-orange: #ffbd6e;
+  --tag-red-bg: rgba(255, 92, 92, .15); --tag-red: #ff9b9b;
+  --tag-purple-bg: rgba(143, 155, 255, .16); --tag-purple: #bcc3ff;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, .5);
+  --shadow-pop: 0 0 0 1px rgba(255, 255, 255, .09), 0 18px 48px rgba(0, 0, 0, .7);
+  --backdrop: rgba(0, 0, 0, .6);
+  color-scheme: dark;
+}

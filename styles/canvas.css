@@ -1,0 +1,53 @@
+/* ============================================================================
+   styles/canvas.css  —  How the optical table drawing looks
+   ----------------------------------------------------------------------------
+   These classes style the shapes drawn on the table (scripts/ui/canvas.js).
+   The components themselves are drawings from assets/components/:
+     • beam splitter = cube; a red corner marks its input side
+     • mirror        = mirror plate (θ = 180°), silvered side facing the light
+     • phase shifter = phase plate (θ = 0°, φ ≠ 0°)
+     • detector      = photodiode on an edge;  photon source = laser
+     • photon amplitude = orange line on an edge (thicker = more likely)
+   This file is also embedded in exported SVG drawings.
+   ============================================================================ */
+
+.dotgrid { fill: var(--dot); }
+.g-line { stroke: var(--gridline); stroke-width: 1; stroke-dasharray: 4 5; fill: none; }
+.e-hit { stroke: transparent; stroke-width: 18; cursor: pointer; fill: none; }
+.e-hit:hover { stroke: var(--accent); stroke-opacity: .14; }
+.n-hit { fill: transparent; cursor: pointer; }
+.n-hit:hover { fill: var(--accent); fill-opacity: .08; }
+.n-sel { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.n-sel-halo { fill: var(--accent); fill-opacity: .07; }
+.n-dot { fill: var(--node); stroke: var(--gridline); stroke-width: 1.3; }
+.n-lab { fill: var(--text-3); font: 9.5px "JetBrains Mono", ui-monospace, monospace; }
+.n-name { fill: var(--text); font: 600 10.5px "Inter", system-ui, sans-serif; }
+.e-lab-h { fill: var(--tip); font: 8.5px "JetBrains Mono", ui-monospace, monospace; opacity: .9; }
+.e-lab-v { fill: var(--det); font: 8.5px "JetBrains Mono", ui-monospace, monospace; opacity: .9; }
+.tip-fill { fill: var(--tip); stroke: var(--canvas); stroke-width: .8; }
+.r-lab { fill: var(--text-2); font: 9.5px "JetBrains Mono", ui-monospace, monospace; }
+.det-halo { fill: var(--det); }
+.art-g { filter: var(--art-halo); }   /* thin light outline in the dark theme so black edges stay visible */
+.ps { fill: var(--phase); stroke: var(--phase); }
+.ps-lab { fill: var(--phase); font: 9.5px "JetBrains Mono", ui-monospace, monospace; }
+.beam { stroke: var(--beam); fill: none; stroke-linecap: round; }
+.beam-glow { stroke: var(--beam); fill: none; stroke-linecap: round; opacity: .13; }
+.beam-flow { stroke: #ffffff; fill: none; stroke-linecap: round; stroke-dasharray: 1.5 11; opacity: .6; animation: flow .9s linear infinite; }
+.trail { stroke: var(--beam); fill: none; stroke-linecap: round; opacity: .16; }
+.beam-ar { fill: var(--beam); }
+.src { fill: var(--beam); stroke: var(--canvas); stroke-width: 1.5; }
+.det-lab { fill: var(--det); font: 600 10px "Inter", system-ui, sans-serif; }
+.det-p { fill: var(--text-2); font: 9.5px "JetBrains Mono", ui-monospace, monospace; }
+.det-sel { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.port { stroke: var(--text-3); fill: none; stroke-width: 1.4; }
+.port-ar { fill: var(--text-3); }
+.port-out { stroke: var(--beam); }
+.port-out-ar { fill: var(--beam); }
+.port-lab { fill: var(--text-3); font: 10px "Inter", system-ui, sans-serif; }
+/* charts */
+.ax { stroke: var(--border-strong); stroke-width: 1; }
+.gl { stroke: var(--border); stroke-width: 1; }
+.axl { fill: var(--text-3); font: 10.5px "JetBrains Mono", ui-monospace, monospace; }
+.cur { stroke: var(--text-2); stroke-width: 1; stroke-dasharray: 3 3; }
+@keyframes flow { to { stroke-dashoffset: -12.5; } }
+@media (prefers-reduced-motion: reduce) { .beam-flow { animation: none; } }

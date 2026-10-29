@@ -1,0 +1,182 @@
+<!doctype html>
+<!-- ===========================================================================
+  OPTICS.QURIOSITY — main page
+  ---------------------------------------------------------------------------
+  HOW TO OPEN:  double-click this file. It opens in your web browser.
+                Keep the whole folder together; the page needs the other files.
+
+  WHAT IS WHERE
+    config.js ............. YOUR SETTINGS and the free Groq AI key  ← edit this
+    styles/theme.css ...... colours and fonts
+    styles/*.css .......... layout and look of each part
+    scripts/core/ ......... the physics (formulas, simulation, experiments)
+    scripts/ui/ ........... everything on screen (table, panels, AI, settings)
+    scripts/app.js ........ starts the app
+    docs/guide.html ....... the complete guide
+    assets/brand/ ......... the Quriosity logo
+
+  This file only lays out the empty frame of the page; the scripts fill it.
+=========================================================================== -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <title>optics.quriosity</title>
+  <meta name="description" content="optics.quriosity: an open-access, browser-based simulator for programmable photonic arrays. Build beam-splitter grids, send in photons and watch the quantum state evolve.">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="optics.quriosity">
+  <meta property="og:description" content="An open-access platform for programmable photonics. Quriosity begins here.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 610.2 610.2%22%3E%3Cstyle%3Epath{fill:#111111}%40media (prefers-color-scheme:dark){path{fill:#ffffff}}%3C/style%3E%3Cpath transform=%22translate(118.5 22.6)%22 fill-rule=%22evenodd%22 d=%22M216.2 484.7Q213.3 484.7 209.2 485.3Q205.0 486.0 200.7 487.8Q196.3 489.7 194.0 491.3Q191.7 493.0 188.3 496.3Q185.0 499.7 182.5 504.0Q180.0 508.3 179.3 510.7Q178.7 513.0 178.5 514.5Q178.3 516.0 178.0 516.7Q177.7 517.3 177.7 522.7Q177.7 528.0 178.5 531.7Q179.3 535.3 180.8 538.7Q182.3 542.0 183.7 544.0Q185.0 546.0 187.7 548.7Q190.3 551.3 193.5 553.7Q196.7 556.0 200.3 557.7Q204.0 559.3 207.8 560.2Q211.7 561.0 215.2 561.0Q218.7 561.0 223.5 560.0Q228.3 559.0 231.2 557.7Q234.0 556.3 236.7 554.5Q239.3 552.7 242.3 549.8Q245.3 547.0 247.3 544.0Q249.3 541.0 250.7 537.8Q252.0 534.7 252.8 531.3Q253.7 528.0 253.7 522.5Q253.7 517.0 252.5 512.7Q251.3 508.3 249.7 505.2Q248.0 502.0 247.2 500.8Q246.3 499.7 243.2 496.5Q240.0 493.3 237.2 491.3Q234.3 489.3 230.3 487.7Q226.3 486.0 222.7 485.3Q219.0 484.7 216.2 484.7ZM310.8 61.2Q308.3 60.0 306.2 59.7Q304.0 59.3 301.0 59.7Q298.0 60.0 295.3 61.5Q292.7 63.0 291.2 64.5Q289.7 66.0 288.8 67.3Q288.0 68.7 287.2 71.3Q286.3 74.0 286.3 76.2Q286.3 78.3 286.7 79.7Q287.0 81.0 288.2 83.2Q289.3 85.3 295.3 92.3Q301.3 99.3 303.7 102.5Q306.0 105.7 309.3 111.0Q312.7 116.3 316.7 124.3Q320.7 132.3 323.7 140.8Q326.7 149.3 328.5 157.3Q330.3 165.3 331.5 175.8Q332.7 186.3 332.5 195.3Q332.3 204.3 331.0 213.7Q329.7 223.0 327.3 231.5Q325.0 240.0 323.0 245.5Q321.0 251.0 319.2 255.0Q317.3 259.0 312.2 267.8Q307.0 276.7 303.3 281.3Q299.7 286.0 296.2 289.8Q292.7 293.7 285.8 299.5Q279.0 305.3 273.2 309.3Q267.3 313.3 257.7 319.0Q248.0 324.7 246.8 325.7Q245.7 326.7 242.8 328.3Q240.0 330.0 234.5 333.8Q229.0 337.7 225.2 340.8Q221.3 344.0 217.3 347.7Q213.3 351.3 210.2 354.7Q207.0 358.0 202.0 365.0Q197.0 372.0 194.7 376.3Q192.3 380.7 190.0 386.7Q187.7 392.7 186.2 399.0Q184.7 405.3 184.3 409.2Q184.0 413.0 184.0 419.5Q184.0 426.0 184.7 431.2Q185.3 436.3 187.5 444.3Q189.7 452.3 192.3 458.7Q195.0 465.0 198.0 469.7Q201.0 474.3 202.5 475.8Q204.0 477.3 206.8 478.8Q209.7 480.3 211.5 480.7Q213.3 481.0 215.7 481.0Q218.0 481.0 220.0 480.5Q222.0 480.0 223.7 479.2Q225.3 478.3 227.8 476.0Q230.3 473.7 231.3 471.7Q232.3 469.7 232.7 468.3Q233.0 467.0 233.2 463.8Q233.3 460.7 233.0 459.3Q232.7 458.0 229.3 451.7Q226.0 445.3 224.5 441.8Q223.0 438.3 221.8 434.5Q220.7 430.7 219.8 425.5Q219.0 420.3 219.0 417.0Q219.0 413.7 219.3 410.7Q219.7 407.7 220.5 404.0Q221.3 400.3 222.5 396.8Q223.7 393.3 225.8 389.5Q228.0 385.7 230.8 381.5Q233.7 377.3 235.0 375.8Q236.3 374.3 241.8 369.2Q247.3 364.0 255.2 358.3Q263.0 352.7 274.5 345.8Q286.0 339.0 289.5 336.5Q293.0 334.0 296.0 332.3Q299.0 330.7 303.0 327.7Q307.0 324.7 312.5 320.0Q318.0 315.3 325.7 307.2Q333.3 299.0 336.2 295.2Q339.0 291.3 340.8 288.2Q342.7 285.0 343.8 283.5Q345.0 282.0 348.5 275.7Q352.0 269.3 356.0 259.7Q360.0 250.0 362.8 240.2Q365.7 230.3 366.0 227.0Q366.3 223.7 367.2 219.5Q368.0 215.3 368.5 210.0Q369.0 204.7 369.0 190.8Q369.0 177.0 368.7 173.2Q368.3 169.3 367.2 162.0Q366.0 154.7 365.3 152.8Q364.7 151.0 363.7 146.2Q362.7 141.3 360.8 135.7Q359.0 130.0 356.2 123.2Q353.3 116.3 351.0 111.7Q348.7 107.0 345.7 101.8Q342.7 96.7 340.2 93.0Q337.7 89.3 334.0 84.5Q330.3 79.7 327.0 76.0Q323.7 72.3 318.5 67.3Q313.3 62.3 310.8 61.2ZM228.2 9.8Q220.0 7.7 211.0 6.3Q202.0 5.0 195.7 4.5Q189.3 4.0 182.0 4.0Q174.7 4.0 165.0 5.0Q155.3 6.0 150.3 6.8Q145.3 7.7 140.5 9.0Q135.7 10.3 134.8 10.3Q134.0 10.3 128.8 12.0Q123.7 13.7 122.0 14.5Q120.3 15.3 115.7 16.8Q111.0 18.3 102.0 22.8Q93.0 27.3 86.7 31.2Q80.3 35.0 73.2 40.5Q66.0 46.0 58.7 53.0Q51.3 60.0 47.0 64.8Q42.7 69.7 37.5 76.7Q32.3 83.7 27.2 92.5Q22.0 101.3 19.8 106.0Q17.7 110.7 14.8 118.2Q12.0 125.7 9.8 133.3Q7.7 141.0 6.3 149.0Q5.0 157.0 4.5 163.3Q4.0 169.7 4.2 179.7Q4.3 189.7 5.3 198.5Q6.3 207.3 7.7 213.3Q9.0 219.3 11.8 227.8Q14.7 236.3 17.2 242.0Q19.7 247.7 23.2 254.2Q26.7 260.7 30.7 266.7Q34.7 272.7 39.3 278.3Q44.0 284.0 52.5 292.2Q61.0 300.3 67.7 305.3Q74.3 310.3 78.8 313.2Q83.3 316.0 92.0 320.3Q100.7 324.7 107.3 327.3Q114.0 330.0 120.7 331.8Q127.3 333.7 132.3 334.7Q137.3 335.7 146.2 336.8Q155.0 338.0 166.7 338.0Q178.3 338.0 187.5 336.7Q196.7 335.3 201.5 334.3Q206.3 333.3 213.5 331.3Q220.7 329.3 226.5 327.0Q232.3 324.7 239.2 321.3Q246.0 318.0 250.2 315.7Q254.3 313.3 257.5 311.2Q260.7 309.0 263.0 306.7Q265.3 304.3 266.3 302.0Q267.3 299.7 267.7 298.0Q268.0 296.3 267.8 293.3Q267.7 290.3 266.7 287.8Q265.7 285.3 263.0 282.7Q260.3 280.0 258.7 279.2Q257.0 278.3 254.2 277.8Q251.3 277.3 248.7 277.7Q246.0 278.0 244.7 278.5Q243.3 279.0 238.0 282.5Q232.7 286.0 226.8 289.0Q221.0 292.0 217.3 293.5Q213.7 295.0 204.5 297.8Q195.3 300.7 190.3 301.5Q185.3 302.3 182.0 302.7Q178.7 303.0 171.2 303.2Q163.7 303.3 155.7 302.5Q147.7 301.7 140.5 300.0Q133.3 298.3 125.0 295.3Q116.7 292.3 110.7 289.2Q104.7 286.0 98.7 282.2Q92.7 278.3 85.5 272.0Q78.3 265.7 75.2 262.2Q72.0 258.7 66.8 251.5Q61.7 244.3 58.2 238.0Q54.7 231.7 51.2 223.0Q47.7 214.3 45.7 205.5Q43.7 196.7 43.0 190.2Q42.3 183.7 42.2 178.3Q42.0 173.0 42.3 167.8Q42.7 162.7 43.3 157.7Q44.0 152.7 46.3 143.3Q48.7 134.0 50.0 130.3Q51.3 126.7 53.8 121.2Q56.3 115.7 61.0 107.8Q65.7 100.0 70.2 94.2Q74.7 88.3 78.2 84.5Q81.7 80.7 87.2 75.7Q92.7 70.7 97.7 67.0Q102.7 63.3 106.8 60.7Q111.0 58.0 121.2 53.0Q131.3 48.0 138.0 45.8Q144.7 43.7 149.8 42.3Q155.0 41.0 158.8 40.3Q162.7 39.7 170.5 39.0Q178.3 38.3 185.2 38.3Q192.0 38.3 196.5 38.7Q201.0 39.0 210.2 40.7Q219.3 42.3 224.3 43.8Q229.3 45.3 234.5 47.3Q239.7 49.3 246.3 52.7Q253.0 56.0 257.3 58.8Q261.7 61.7 263.8 62.5Q266.0 63.3 268.5 63.5Q271.0 63.7 273.5 63.2Q276.0 62.7 277.8 61.7Q279.7 60.7 281.7 58.8Q283.7 57.0 285.0 54.0Q286.3 51.0 286.3 46.8Q286.3 42.7 285.3 40.2Q284.3 37.7 282.2 35.5Q280.0 33.3 275.2 30.2Q270.3 27.0 261.5 22.5Q252.7 18.0 244.5 15.0Q236.3 12.0 228.2 9.8Z%22/%3E%3C/svg%3E">
+
+  <!-- Fonts (optional: if offline, the system font is used) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;650;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+  <!-- Look and feel -->
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/dialogs.css">
+  <link rel="stylesheet" href="styles/canvas.css">
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- ================= LEFT SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar" aria-label="Navigation">
+    <div class="sb-head">
+      <span class="ws-logo" id="wsLogo" aria-hidden="true"></span>
+      <span class="ws-name" title="optics.quriosity">optics<span class="ws-sub">.quriosity</span></span><span class="ws-ver" id="sbVersion"></span>
+      <button class="icon-btn sb-close" id="sbClose" aria-label="Close menu"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <button class="sb-search" id="openCmd"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span><kbd>Ctrl K</kbd></button>
+    <nav class="sb-scroll">
+      <div class="sb-section"><div class="sb-label">Experiments</div><div id="sbPresets"></div></div>
+      <div class="sb-section"><div class="sb-label">My setups<button class="icon-btn" id="saveSetup" aria-label="Save the current setup" title="Save the current setup"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button></div><div id="sbSaved"></div></div>
+      <div class="sb-section"><div class="sb-label">Tools</div><div id="sbTools"></div></div>
+    </nav>
+    <div class="sb-foot">
+      <button class="sb-item" id="openSettings"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12.2 2h-.4a2 2 0 0 0-2 2v.2a2 2 0 0 1-1 1.7l-.4.3a2 2 0 0 1-2 0l-.2-.1a2 2 0 0 0-2.7.7l-.2.4a2 2 0 0 0 .7 2.7l.2.1a2 2 0 0 1 1 1.7v.5a2 2 0 0 1-1 1.8l-.2.1a2 2 0 0 0-.7 2.7l.2.4a2 2 0 0 0 2.7.7l.2-.1a2 2 0 0 1 2 0l.4.3a2 2 0 0 1 1 1.7v.2a2 2 0 0 0 2 2h.4a2 2 0 0 0 2-2v-.2a2 2 0 0 1 1-1.7l.4-.3a2 2 0 0 1 2 0l.2.1a2 2 0 0 0 2.7-.7l.2-.4a2 2 0 0 0-.7-2.7l-.2-.1a2 2 0 0 1-1-1.8v-.5a2 2 0 0 1 1-1.7l.2-.1a2 2 0 0 0 .7-2.7l-.2-.4a2 2 0 0 0-2.7-.7l-.2.1a2 2 0 0 1-2 0l-.4-.3a2 2 0 0 1-1-1.7V4a2 2 0 0 0-2-2z"/></svg><span class="lbl">Settings</span><kbd>,</kbd></button>
+      <button class="sb-item" id="openAbout"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg><span class="lbl">About</span></button>
+      <a class="sb-item" href="docs/guide.html" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></svg><span class="lbl">Guide</span></a>
+      <button class="sb-item" id="themeBtn"></button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <!-- ================= MAIN COLUMN ================= -->
+  <main class="main">
+    <header class="topbar">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu"><svg class="i" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <nav class="crumbs" aria-label="Location"><span class="c-muted" id="crumbSection">Experiments</span><span class="c-muted">/</span><span class="c-title" id="crumbTitle"></span><span class="tag" id="crumbEdited" hidden>Edited</span></nav>
+      <div class="top-actions">
+        <label class="grid-size hide-md" for="gn">Grid <input type="number" id="gn" min="1" max="14" aria-label="Columns"> × <input type="number" id="gm" min="1" max="14" aria-label="Rows"></label>
+        <span class="sep hide-md"></span>
+        <button class="icon-btn" id="undo" title="Undo (Ctrl Z)" aria-label="Undo"><svg class="i" viewBox="0 0 24 24"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg></button>
+        <button class="icon-btn" id="redo" title="Redo (Ctrl Shift Z)" aria-label="Redo"><svg class="i" viewBox="0 0 24 24"><path d="m15 14 5-5-5-5"/><path d="M20 9H9.5a5.5 5.5 0 0 0 0 11H13"/></svg></button>
+        <button class="status btn-ghost hide-sm" id="status" style="border:0;background:none;cursor:pointer"><span class="dot ok" id="statusDot"></span><span id="statusText"></span></button>
+        <button class="btn hide-sm" id="formulaBtn" title="Change the formula"></button>
+        <button class="btn btn-primary" id="exportBtn" aria-haspopup="menu"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>Export</button>
+      </div>
+    </header>
+
+    <!-- Optical table -->
+    <section class="stage" id="stage" aria-label="Optical table">
+      <svg id="table" role="img" aria-label="Optical table drawing"></svg>
+      <div class="float legend" id="legend"></div>
+      <div class="float pill zoom">
+        <button class="icon-btn lbl-btn" id="lblBtn" title="Show a† labels on edges">a†</button><span class="sep"></span>
+        <button class="icon-btn" id="zoomOut" aria-label="Zoom out" title="Zoom out"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M8 11h6M20 20l-3.5-3.5"/></svg></button>
+        <button class="icon-btn" id="zoomFit" aria-label="Fit to screen" title="Fit to screen (0)"><svg class="i" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button>
+        <button class="icon-btn" id="zoomIn" aria-label="Zoom in" title="Zoom in"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M11 8v6M8 11h6M20 20l-3.5-3.5"/></svg></button>
+      </div>
+      <div class="float coords" id="coords"></div>
+      <div class="float pill timeline" role="group" aria-label="Timeline">
+        <button class="icon-btn play" id="play" aria-label="Play" title="Play / pause (Space)"><svg class="i" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z" fill="currentColor" stroke="none"/></svg></button>
+        <button class="icon-btn" id="stepBack" aria-label="Previous step" title="Previous step (←)"><svg class="i" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="icon-btn" id="stepFwd" aria-label="Next step" title="Next step (→)"><svg class="i" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></svg></button>
+        <input type="range" id="tslider" min="0" max="0" value="0" aria-label="Time step">
+        <span class="t" id="tlabel">0 / 0</span>
+        <span class="sep speed"></span>
+        <select id="speed" class="speed" aria-label="Playback speed"><option value="900">0.5×</option><option value="520" selected>1×</option><option value="260">2×</option><option value="120">4×</option></select>
+      </div>
+      <div class="tooltip" id="tip" hidden></div>
+    </section>
+
+    <!-- Analysis drawer -->
+    <section class="drawer" id="drawer" aria-label="Analysis">
+      <div class="drawer-grip" id="drawerGrip" title="Drag to resize"></div>
+      <div class="tabs" role="tablist" id="drawerTabs">
+        <button class="tab on" data-drawer="results" role="tab">Results</button>
+        <button class="tab" data-drawer="evolution" role="tab">Evolution</button>
+        <button class="tab" data-drawer="sweep" role="tab">Sweep</button>
+        <button class="tab" data-drawer="code" role="tab">Python</button>
+        <button class="tab" data-drawer="checks" role="tab">Checks <span class="count" id="countChecks"></span></button>
+        <div class="tools"><button class="icon-btn" id="drawerToggle" aria-label="Fold the analysis panel"></button></div>
+      </div>
+      <div class="drawer-body">
+        <div id="drawer-results"></div>
+        <div id="drawer-evolution" hidden></div>
+        <div id="drawer-sweep" hidden></div>
+        <div id="drawer-code" hidden></div>
+        <div id="drawer-checks" hidden></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= RIGHT PANEL ================= -->
+  <aside class="inspector" aria-label="Details">
+    <div class="tabs" role="tablist" id="sideTabs">
+      <button class="tab on" data-side="props" role="tab">Properties</button>
+      <button class="tab" data-side="input" role="tab">Input</button>
+      <button class="tab" data-side="ai" role="tab">Assistant</button>
+    </div>
+    <div class="pane" id="pane-props"></div>
+    <div class="pane" id="pane-input" hidden></div>
+    <div class="pane" id="pane-ai" hidden></div>
+  </aside>
+</div>
+
+<!-- ================= WINDOWS ================= -->
+<dialog id="settings" aria-label="Settings">
+  <div class="set-wrap">
+    <nav class="set-nav"><div class="set-title">Settings</div><div id="settingsNav" style="display:contents"></div></nav>
+    <div class="set-main"><button class="icon-btn set-close" data-close aria-label="Close settings"><svg class="i" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button><div id="settingsBody"></div></div>
+  </div>
+</dialog>
+
+<dialog id="cmdk" aria-label="Search and commands">
+  <div class="cmd-search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="text" id="cmdInput" placeholder="Search experiments, tools and commands…" aria-label="Search commands" autocomplete="off"></div>
+  <div id="cmdList" role="listbox"></div>
+  <div class="cmd-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> to move</span><span><kbd>Enter</kbd> to choose</span><span><kbd>Esc</kbd> to close</span></div>
+</dialog>
+
+<div class="menu" id="exportMenu" role="menu" hidden></div>
+<input type="file" id="fileIn" accept=".json,application/json" hidden>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ================= SCRIPTS (order matters) ================= -->
+<script src="config.js"></script>
+<script src="scripts/core/math.js"></script>
+<script src="scripts/core/project-info.js"></script>
+<script src="scripts/core/formulas.js"></script>
+<script src="scripts/core/engine.js"></script>
+<script src="scripts/core/presets.js"></script>
+<script src="scripts/core/exporters.js"></script>
+<script src="scripts/ui/dom.js"></script>
+<script src="scripts/ui/component-art.js"></script>
+<script src="scripts/ui/brand-art.js"></script>
+<script src="scripts/ui/store.js"></script>
+<script src="scripts/ui/canvas.js"></script>
+<script src="scripts/ui/inspector.js"></script>
+<script src="scripts/ui/drawer.js"></script>
+<script src="scripts/ui/settings.js"></script>
+<script src="scripts/ui/assistant.js"></script>
+<script src="scripts/ui/command.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>

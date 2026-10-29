@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software in your research or teaching, please cite it as below."
+title: "optics.quriosity: an open-access, browser-based simulator for programmable photonic arrays"
+version: 1.0.0
+date-released: 2026-10-23
+repository-code: "https://github.com/gurnoorsingh13/optics.quriosity"
+url: "https://gurnoorsingh13.github.io/optics.quriosity/"
+license: MIT
+type: software
+authors:
+  - family-names: Arora
+    given-names: Bindiya
+    affiliation: "Department of Physics, Guru Nanak Dev University, Amritsar"
+  - family-names: Badhan
+    given-names: Vipul
+    affiliation: "Department of Physics, Guru Nanak Dev University, Amritsar"
+  - family-names: Singh
+    given-names: Gurnoor
+keywords:
+  - quantum optics
+  - linear optics
+  - programmable photonics
+  - quantum foundations
+  - Wigner's friend
+  - simulator

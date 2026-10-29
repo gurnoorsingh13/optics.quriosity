@@ -1,0 +1,20 @@
+{
+  "name": "optics.quriosity",
+  "version": "1.0.0",
+  "description": "Open-access, browser-based simulator for programmable photonic arrays and linear quantum optics.",
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://gurnoorsingh13.github.io/optics.quriosity/",
+  "repository": { "type": "git", "url": "https://github.com/gurnoorsingh13/optics.quriosity.git" },
+  "scripts": {
+    "test": "node tests/run-tests.js",
+    "start": "npx --yes http-server -c-1 -p 8080 .",
+    "build:art": "python3 tools/build_component_art.py",
+    "build:guide": "python3 tools/build_guide.py",
+    "build:brand": "python3 tools/build_brand.py"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["quantum-optics", "photonics", "simulator", "beam-splitter", "linear-optics", "education"]
+}

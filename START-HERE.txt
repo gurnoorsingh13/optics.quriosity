@@ -1,0 +1,15 @@
+OPTICS.QURIOSITY — START HERE
+=============================
+
+1. Double-click  index.html  to open the simulator in your web browser.
+2. Read the full guide: open  docs/guide.html  (or click "Guide" in the app).
+3. Optional AI assistant: get a free key at https://console.groq.com/keys
+   and paste it in the app (Settings → AI assistant). It stays in your browser.
+   You can also paste it in  config.js , but then never share or upload that
+   copy of the folder, because anyone could read the key.
+
+Keep all files in this folder together. The only file you normally edit is
+config.js (open it with Notepad). The About text and team are in
+scripts/core/project-info.js .
+
+For developers: README.md, CONTRIBUTING.md, and  npm test  to run the checks.
